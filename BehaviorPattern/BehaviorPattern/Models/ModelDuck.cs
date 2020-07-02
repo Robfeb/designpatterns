@@ -1,19 +1,20 @@
 ﻿using System;
 using BehaviorPattern.Implementations;
+
 namespace BehaviorPattern.Models
 {
-    public class RubberDuck: Duck
+    public class ModelDuck: Duck
     {
-        public RubberDuck()
+        public ModelDuck()
         {
-            quackBehavior = new Squeak();
+            quackBehavior = new Quack();
             flyBehavior = new FlyNoWay();
 
         }
 
         public override void Display()
         {
-            Console.WriteLine("I'm a Rubber Duck, looking as plastic made duck");
+            Console.WriteLine("I'm a Model Duck");
         }
     }
 }

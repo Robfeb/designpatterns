@@ -1,19 +1,17 @@
 ﻿using System;
+using BehaviorPattern.Implementations;
 namespace BehaviorPattern.Models
 {
     public class DecoyDuck: Duck
     {
-        public override void Quack()
+        public DecoyDuck()
         {
-            Console.WriteLine("I'm a Decoy Duck, I cannot Quack!!");
+            quackBehavior = new MuteQuack();
+            flyBehavior = new FlyNoWay();
         }
         public override void Display()
         {
             Console.WriteLine("I'm a Decoy Duck, looking as wood made duck");
-        }
-        public override void Fly()
-        {
-            Console.WriteLine("I'm a Rubber Duck, I cannot fly!!!");
         }
     }
 }
