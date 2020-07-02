@@ -9,7 +9,7 @@ namespace BehaviorPattern
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Showing Behavior Pattern through ducks examples!");
+            Console.WriteLine("Showing Strategy Pattern through ducks examples!");
             var modelDuck = new ModelDuck();
             
             IEnumerable < Duck > duckList = new List<Duck>
