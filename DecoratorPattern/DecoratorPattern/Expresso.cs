@@ -5,9 +5,9 @@ namespace DecoratorPattern
     {
         public Expresso()
         {
-            setDescription("Expresso Coffee");
+            SetDescription("Expresso Coffee");
 
-            setCost(1.99);
+            SetCost(1.99);
         }
     }
 }

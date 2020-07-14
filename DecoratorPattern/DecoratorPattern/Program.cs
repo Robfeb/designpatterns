@@ -8,12 +8,15 @@ namespace DecoratorPattern
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to the StarBuzz Coffee (Decorator Pattern)");
-            var coffee1 = new Expresso();
-            coffee1.setMilk(true);
-            var coffee2 = new HouseBlend();
-            var coffee3 = new DarkRoast();
-            var coffee4 = new Decaf();
-            List<Beverage> coffeList = new List<Beverage>() { coffee1,coffee2,coffee3,coffee4 };
+            var expresso = new Expresso();
+            
+            var houseBlend = new HouseBlend();
+            houseBlend.SetMocha(true);
+            var darkRoast = new DarkRoast();
+            darkRoast.SetSoy(true);
+            var decaf = new Decaf();
+            decaf.SetMilk(true);
+            List<Beverage> coffeList = new List<Beverage>() { expresso,houseBlend,darkRoast,decaf };
 
             foreach (var coffee in coffeList)
             {

@@ -5,8 +5,8 @@ namespace DecoratorPattern
     {
         public HouseBlend()
         {
-            setDescription("HouseBlend Coffee");
-            setCost(1.1);
+            SetDescription("HouseBlend Coffee");
+            SetCost(1.1);
         }
     }
 }

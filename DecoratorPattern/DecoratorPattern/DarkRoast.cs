@@ -5,9 +5,9 @@ namespace DecoratorPattern
     {
         public DarkRoast()
         {
-            setDescription("DarkRoast Coffee");
+            SetDescription("DarkRoast Coffee");
 
-            setCost(1.3);
+            SetCost(1.3);
         }
     }
 }

@@ -5,9 +5,9 @@ namespace DecoratorPattern
     {
         public Decaf()
         {
-            setDescription("Decaf Coffee");
+            SetDescription("Decaf Coffee");
 
-            setCost(1.60);
+            SetCost(1.60);
         }
     }
 }
