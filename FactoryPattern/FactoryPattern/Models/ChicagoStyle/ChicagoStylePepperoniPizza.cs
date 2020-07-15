@@ -1,6 +1,6 @@
 ﻿namespace FactoryPattern.Models
 {
-    public class ChicagoStylePepperoniPizza : Pizza
+    public class ChicagoStylePepperoniPizza : PizzaClassic
     {
         public ChicagoStylePepperoniPizza()
         {

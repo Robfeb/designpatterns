@@ -1,7 +1,7 @@
 ﻿using System;
 namespace FactoryPattern.Models
 {
-    public class NYPizza : Pizza
+    public class NYPizza : PizzaClassic
     {
         public NYPizza()
         {

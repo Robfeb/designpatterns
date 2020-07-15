@@ -1,24 +1,29 @@
 ﻿using System;
 using System.Collections.Generic;
 using FactoryPattern.Interfaces;
+using FactoryPattern.Models.Ingredients;
 
 namespace FactoryPattern.Models
 {
-    public class Pizza: IPizza
+    public abstract class Pizza: IPizza
     {
         public string name;
-        public string dough;
-        public string sauce;
         public List<string> toppings = new List<string>();
-
+        public IDough dough;
+        public ISauce sauce;
+        public List<IVeggies> veggies;
+        public ICheese cheese;
+        public IPepperoni pepperoni;
+        public IClams clam;
+        public abstract void Prepare();
        
         public Pizza()
         {
             name = "default pizza";
-            dough = "classic";
-            sauce = "no";
+            dough = new ThinCrustDough();
+            sauce = new NoSauce();
         }
-        public void Prepare()
+       /* public void Prepare()
         {
             Console.WriteLine($"Preparing the {name} !...");
             Console.WriteLine($"Width the {dough} dough!...");
@@ -27,7 +32,7 @@ namespace FactoryPattern.Models
             {
                 Console.WriteLine($"adding {topping}!...");
             }
-        }
+        }*/
         public void Bake() {
             Console.WriteLine($"Baking the {name}! 25 minutes at 250ºC ");
         }

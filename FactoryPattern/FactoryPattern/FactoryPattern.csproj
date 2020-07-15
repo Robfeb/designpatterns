@@ -11,5 +11,9 @@
     <Folder Include="Models\ChicagoStyle\" />
     <Folder Include="Models\NYStyle\" />
     <Folder Include="Interfaces\" />
+    <Folder Include="Models\Ingredients\" />
+    <Folder Include="Models\Classic\" />
+    <Folder Include="Factories\" />
   </ItemGroup>
+  
 </Project>
