@@ -5,35 +5,15 @@ namespace FactoryPattern
 {
     public class PizzaStore
     {
-       public Pizza OrderPizza(string pizzatype)
+        SimplePizzaFactory factory;
+        public PizzaStore(SimplePizzaFactory factory)
         {
-            Pizza pizza ;
-            if (pizzatype.Equals("cheese"))
-            {
-                pizza = new CheesePizza();
-            }
-            /* else if (pizzatype.Equals("greek"))
-             {
-                 pizza = new GreekPizza();
-             }
-            */
-            else if (pizzatype.Equals("veggie"))
-            {
-                pizza = new VeggiePizza();
-            }
-            else if (pizzatype.Equals("pepperoni"))
-            {
-                pizza = new PepperoniPizza();
-            }
-            else if (pizzatype.Equals("hawaian"))
-            {
-                pizza = new HawaianPizza();
-            }
-            else
-                pizza = new MargaritaPizza();
+            this.factory = factory;
+        }
 
-
-
+        public Pizza OrderPizza(string pizzaType)
+        {
+            Pizza pizza = factory.CreatePizza(pizzaType);
             pizza.Prepare();
             pizza.Bake();
             pizza.Cut();
