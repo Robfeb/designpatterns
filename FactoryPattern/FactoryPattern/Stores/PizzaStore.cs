@@ -1,11 +1,12 @@
 ﻿using System;
+using FactoryPattern.Interfaces;
 using FactoryPattern.Models;
 
 namespace FactoryPattern.Stores
 {
     public abstract class PizzaStore
     {
-        public Pizza OrderPizza(string pizzaType)
+        public Pizza OrderPizza(PizzaType pizzaType)
         {
             Pizza pizza = CreatePizza(pizzaType);
             if (pizza != null)
@@ -21,6 +22,6 @@ namespace FactoryPattern.Stores
             return pizza;
         }
 
-        public abstract Pizza CreatePizza(string pizzaType);
+        public abstract Pizza CreatePizza(PizzaType pizzaType);
     }
 }

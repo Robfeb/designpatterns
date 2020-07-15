@@ -1,30 +1,21 @@
-﻿using FactoryPattern.Models;
+﻿using FactoryPattern.Interfaces;
+using FactoryPattern.Models;
 
 namespace FactoryPattern.Stores
 {
     public class NYPizzaStore : PizzaStore
     {
 
-        public override Pizza CreatePizza(string pizzaType)
+        public override Pizza CreatePizza(PizzaType pizzaType)
         {
-            Pizza pizza = null;
-            if (pizzaType.Equals("cheese"))
+            Pizza pizza = pizzaType switch
             {
-                pizza = new NYStyleCheesePizza();
-            }
-            else if (pizzaType.Equals("NY"))
-            {
-                pizza = new NYPizza();
-            }
-            else if (pizzaType.Equals("pepperoni"))
-            {
-                pizza = new NYStylePepperoniPizza();
-            }
-            else if (pizzaType.Equals("hawaian"))
-            {
-                pizza = new NYStyleHawaianPizza();
-            }
-           
+                PizzaType.Cheese => new NYStyleCheesePizza(),
+                PizzaType.NewYork => new NYPizza(),
+                PizzaType.Pepperoni => new NYStylePepperoniPizza(),
+                PizzaType.Hawaian => new NYStyleHawaianPizza(),
+                _ => null,
+            };
             return pizza;
         }
     }

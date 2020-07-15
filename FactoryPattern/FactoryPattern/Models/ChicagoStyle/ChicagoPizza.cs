@@ -1,11 +1,13 @@
 ﻿using System;
+using FactoryPattern.Interfaces;
+
 namespace FactoryPattern.Models
 {
     public class ChicagoPizza: Pizza
     {
         public ChicagoPizza()
         {
-            description = "Chicago Special Pizza";
+            name = "Chicago Special Pizza";
         }
     }
 }

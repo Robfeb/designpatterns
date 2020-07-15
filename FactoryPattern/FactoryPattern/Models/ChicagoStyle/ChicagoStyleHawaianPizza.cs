@@ -4,7 +4,7 @@
     {
         public ChicagoStyleHawaianPizza()
         {
-            description = "Chicago Style Hawaian Pizza";
+            name = "Chicago Style Hawaian Pizza";
         }
     }
 }

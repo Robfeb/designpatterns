@@ -4,7 +4,7 @@
     {
         public NYStyleClassicVeggiePizza()
         {
-            description = "NY Style Veggie Pizza";
+            name = "NY Style Veggie Pizza";
         }
     }
 }

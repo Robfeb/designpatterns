@@ -10,5 +10,6 @@
     <Folder Include="Stores\" />
     <Folder Include="Models\ChicagoStyle\" />
     <Folder Include="Models\NYStyle\" />
+    <Folder Include="Interfaces\" />
   </ItemGroup>
 </Project>

@@ -5,7 +5,7 @@ namespace FactoryPattern.Models
     {
         public ClassicPepperoniPizza()
         {
-            description = "Classic Pepperoni Pizza";
+            name = "Classic Pepperoni Pizza";
         }
     }
 }

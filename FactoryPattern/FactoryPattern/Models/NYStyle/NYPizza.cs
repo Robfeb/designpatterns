@@ -5,7 +5,7 @@ namespace FactoryPattern.Models
     {
         public NYPizza()
         {
-            description = "New York Special Pizza";
+            name = "New York Special Pizza";
         }
     }
 }
