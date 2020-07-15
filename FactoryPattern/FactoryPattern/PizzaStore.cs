@@ -12,9 +12,14 @@ namespace FactoryPattern
             {
                 pizza = new CheesePizza();
             }
-            else if (pizzatype.Equals("greek"))
+            /* else if (pizzatype.Equals("greek"))
+             {
+                 pizza = new GreekPizza();
+             }
+            */
+            else if (pizzatype.Equals("veggie"))
             {
-                pizza = new GreekPizza();
+                pizza = new VeggiePizza();
             }
             else if (pizzatype.Equals("pepperoni"))
             {
