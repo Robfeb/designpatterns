@@ -3,20 +3,19 @@ using CommandPattern.Models;
 
 namespace CommandPattern.Commands
 {
-    public class CeilingFanOffCommand : ICommand
+    public class CeilingFanLowCommand : ICommand
     {
         CeilingFan ceilingfan;
         SpeedFan lastSpeedFan;
-        public CeilingFanOffCommand(CeilingFan ceiling)
+        public CeilingFanLowCommand(CeilingFan ceiling)
         {
             this.ceilingfan = ceiling;
         }
         public void Execute()
         {
             lastSpeedFan = ceilingfan.GetSpeed();
-            ceilingfan.Off();            
+            ceilingfan.Low();
         }
-
         public string GetName()
         {
             return this.ToString();
@@ -41,7 +40,6 @@ namespace CommandPattern.Commands
                 default:
                     break;
             }
-            
         }
     }
 }

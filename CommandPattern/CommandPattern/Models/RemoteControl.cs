@@ -8,6 +8,7 @@ namespace CommandPattern.Models
     {
         ICommand[] onCommands;
         ICommand[] offCommands;
+        ICommand undoCommand;
         public RemoteControl()
         {
             onCommands = new ICommand[7];
@@ -18,6 +19,7 @@ namespace CommandPattern.Models
                 onCommands[i] = noCommand;
                 offCommands[i] = noCommand;
             }
+            undoCommand = noCommand;
         }
         public void SetCommand(int slot, ICommand onCommand, ICommand offCommand)
         {
@@ -28,13 +30,21 @@ namespace CommandPattern.Models
         {
             if (onCommands[slot] != null)
                 onCommands[slot].Execute();
+            undoCommand = onCommands[slot];
 
         }
         public void OffButtonWasPushed(int slot)
         {
             if (onCommands[slot] != null)
                 offCommands[slot].Execute();
+            undoCommand = offCommands[slot];
         }
+        public void UndoButtonWasPushed()
+        {
+            Console.WriteLine("\n------ Undo Press Button -------\n");
+            undoCommand.Undo();
+        }
+
         public void GetStatus()
         {
             Console.WriteLine("\n------ Remote Control -------\n");

@@ -30,7 +30,9 @@ namespace CommandPattern
             LightOffCommand livingRoomLightOff = new LightOffCommand(livingRoomLight);
             LightOnCommand kitchenLightOn = new LightOnCommand(kitchenLight);
             LightOffCommand kitchenLightOff = new LightOffCommand(kitchenLight);
-            CeilingFanOnCommand ceilingFanOn = new CeilingFanOnCommand(ceilingFan);
+            CeilingFanHighCommand ceilingFanHigh = new CeilingFanHighCommand(ceilingFan);
+            CeilingFanMediumCommand ceilingFanMedium = new CeilingFanMediumCommand(ceilingFan);
+            CeilingFanLowCommand ceilingFanLow = new CeilingFanLowCommand(ceilingFan);
             CeilingFanOffCommand ceilingFanOff = new CeilingFanOffCommand(ceilingFan);
             GarageDoorUpCommand garageDoorUp = new GarageDoorUpCommand(garageDoor);
             GarageDoorDownCommand garageDoorDown = new GarageDoorDownCommand(garageDoor);
@@ -38,8 +40,11 @@ namespace CommandPattern
             StereoOffCommand stereoOff = new StereoOffCommand(stereo);
             remoteControl.SetCommand(0, livingRoomLightOn, livingRoomLightOff);
             remoteControl.SetCommand(1, kitchenLightOn, kitchenLightOff);
-            remoteControl.SetCommand(2, ceilingFanOn, ceilingFanOff);
+            remoteControl.SetCommand(2, ceilingFanHigh, ceilingFanOff);
             remoteControl.SetCommand(3, stereoOnWithCD, stereoOff);
+            remoteControl.SetCommand(4, garageDoorUp, garageDoorDown);
+            remoteControl.SetCommand(5, ceilingFanMedium, ceilingFanOff);
+            remoteControl.SetCommand(6, ceilingFanLow, ceilingFanOff);
 
             remoteControl.GetStatus();
 
@@ -49,8 +54,18 @@ namespace CommandPattern
             remoteControl.OffButtonWasPushed(1);
             remoteControl.OnButtonWasPushed(2);
             remoteControl.OffButtonWasPushed(2);
+            remoteControl.UndoButtonWasPushed();
             remoteControl.OnButtonWasPushed(3);
             remoteControl.OffButtonWasPushed(3);
+            remoteControl.OnButtonWasPushed(4);
+            remoteControl.OffButtonWasPushed(4);
+            remoteControl.OnButtonWasPushed(5);
+            remoteControl.OffButtonWasPushed(5);
+            remoteControl.UndoButtonWasPushed();
+            remoteControl.OnButtonWasPushed(6);
+            remoteControl.OffButtonWasPushed(6);
+
+            remoteControl.UndoButtonWasPushed();
 
         }
     }

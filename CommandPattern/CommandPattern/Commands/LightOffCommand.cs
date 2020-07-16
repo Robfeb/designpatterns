@@ -18,5 +18,10 @@ namespace CommandPattern.Commands
         {
             return this.ToString();
         }
+
+        public void Undo()
+        {
+            light.On();
+        }
     }
 }

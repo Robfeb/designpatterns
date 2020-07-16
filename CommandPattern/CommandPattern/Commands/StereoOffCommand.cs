@@ -18,5 +18,12 @@ namespace CommandPattern.Commands
         {
             return this.ToString();
         }
+
+        public void Undo()
+        {
+            stereo.On();
+            stereo.SetCd();
+            stereo.SetVolume(11);
+        }
     }
 }

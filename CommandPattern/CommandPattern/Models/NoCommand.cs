@@ -12,5 +12,10 @@ namespace CommandPattern.Models
         {
             return "Empty";
         }
+
+        public void Undo()
+        {
+            
+        }
     }
 }
