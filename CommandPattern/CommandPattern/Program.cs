@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using CommandPattern.Commands;
 using CommandPattern.Models;
 
@@ -38,7 +39,14 @@ namespace CommandPattern
             GarageDoorDownCommand garageDoorDown = new GarageDoorDownCommand(garageDoor);
             StereoOnWithCDCommand stereoOnWithCD = new StereoOnWithCDCommand(stereo);
             StereoOffCommand stereoOff = new StereoOffCommand(stereo);
-            remoteControl.SetCommand(0, livingRoomLightOn, livingRoomLightOff);
+
+            List<ICommand> partyOn = new List<ICommand> { livingRoomLightOn, stereoOnWithCD, ceilingFanHigh, garageDoorUp };
+            List<ICommand> partyOff = new List<ICommand>{ livingRoomLightOff, stereoOff, ceilingFanOff, garageDoorDown };
+            MacroCommand partyOnMacro = new MacroCommand(partyOn);
+            MacroCommand partyOffMacro = new MacroCommand(partyOff);
+            remoteControl.SetCommand(0, partyOnMacro, partyOffMacro);
+
+            //remoteControl.SetCommand(0, livingRoomLightOn, livingRoomLightOff);
             remoteControl.SetCommand(1, kitchenLightOn, kitchenLightOff);
             remoteControl.SetCommand(2, ceilingFanHigh, ceilingFanOff);
             remoteControl.SetCommand(3, stereoOnWithCD, stereoOff);
