@@ -14,5 +14,9 @@ namespace CommandPattern.Commands
         {
             light.Off();
         }
+        public string GetName()
+        {
+            return this.ToString();
+        }
     }
 }

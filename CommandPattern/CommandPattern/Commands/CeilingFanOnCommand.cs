@@ -3,16 +3,16 @@ using CommandPattern.Models;
 
 namespace CommandPattern.Commands
 {
-    public class GarageDoorDownCommand : ICommand
+    public class CeilingFanOnCommand : ICommand
     {
-        GarageDoor garage;
-        public GarageDoorDownCommand(GarageDoor garage)
+        CeilingFan ceilingfan;
+        public CeilingFanOnCommand(CeilingFan ceiling)
         {
-            this.garage = garage;
+            this.ceilingfan = ceiling;
         }
         public void Execute()
         {
-            garage.Down();
+            ceilingfan.High();
         }
         public string GetName()
         {

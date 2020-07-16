@@ -14,5 +14,9 @@ namespace CommandPattern.Commands
         {
             garage.Up();
         }
+        public string GetName()
+        {
+            return this.ToString();
+        }
     }
 }

@@ -5,8 +5,9 @@ namespace CommandPattern.Models
     {
         readonly string name = "I'm a Ceiling Fan";
 
-        public CeilingFan()
+        public CeilingFan(string room)
         {
+            name += " " + room;
         }
         public void High()
         {

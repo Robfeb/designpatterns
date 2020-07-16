@@ -3,16 +3,18 @@ using CommandPattern.Models;
 
 namespace CommandPattern.Commands
 {
-    public class GarageDoorDownCommand : ICommand
+    public class StereoOnWithCDCommand : ICommand
     {
-        GarageDoor garage;
-        public GarageDoorDownCommand(GarageDoor garage)
+        Stereo stereo;
+        public StereoOnWithCDCommand(Stereo stereo)
         {
-            this.garage = garage;
+            this.stereo = stereo;
         }
         public void Execute()
         {
-            garage.Down();
+            stereo.On();
+            stereo.SetCd();
+            stereo.SetVolume(11);
         }
         public string GetName()
         {

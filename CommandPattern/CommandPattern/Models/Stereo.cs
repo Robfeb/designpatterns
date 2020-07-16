@@ -5,8 +5,9 @@ namespace CommandPattern.Models
     {
         readonly string name = "I'm a Stereo";
 
-        public Stereo()
+        public Stereo(string room)
         {
+            name += " " + room;
         }
         public void On()
         {
@@ -28,9 +29,9 @@ namespace CommandPattern.Models
         {
             Console.WriteLine($"{name} setRadio!!");
         }
-        public void SetVolume()
+        public void SetVolume(int volume)
         {
-            Console.WriteLine($"{name} setVolume!!");
+            Console.WriteLine($"{name} setVolume {volume}!!");
         }
     }
 }
