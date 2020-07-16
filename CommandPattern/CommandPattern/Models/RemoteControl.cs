@@ -40,7 +40,7 @@ namespace CommandPattern.Models
             Console.WriteLine("\n------ Remote Control -------\n");
             for (int i = 0; i < onCommands.Length; i++)
             {
-                Console.WriteLine("[slot " + i + "] " + onCommands[i].GetName() " - " + offCommands[i].GetName());
+                Console.WriteLine("[slot " + i + "] " + onCommands[i].GetName() +" - " + offCommands[i].GetName());
             }
 
         }
