@@ -68,7 +68,7 @@ namespace Iterator_CompositePatterns
             PancakeHouseMenu pancakeHouseMenu = new PancakeHouseMenu();
             DinerMenu dinerMenu = new DinerMenu();
             CafeMenu cafeMenu = new CafeMenu();
-            Waitress waitress = new Waitress(pancakeHouseMenu, dinerMenu, cafeMenu);
+            Waitress waitress = new Waitress(new List<IMenu> { pancakeHouseMenu, dinerMenu, cafeMenu });
             waitress.PrintMenu();
         }
     }

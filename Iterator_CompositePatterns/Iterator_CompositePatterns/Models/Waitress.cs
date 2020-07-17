@@ -1,29 +1,23 @@
 ﻿using System;
+using System.Collections.Generic;
+
 namespace Iterator_CompositePatterns.Models
 {
     public class Waitress
     {
-        IMenu pancakeHouseMenu;
-        IMenu dinerMenu;
-        IMenu cafeMenu;
-        public Waitress(IMenu pancakeHouseMenu, IMenu dinerMenu, IMenu cafeMenu)
+        List<IMenu> menus;
+        public Waitress(List<IMenu> menus)
         {
-            this.pancakeHouseMenu = pancakeHouseMenu;
-            this.dinerMenu = dinerMenu;
-            this.cafeMenu = cafeMenu;
+            this.menus = menus;
         }
 
         public void PrintMenu()
         {
-            ITerator pancakeIterator = pancakeHouseMenu.CreateIterator();
-            ITerator dinerIterator = dinerMenu.CreateIterator();
-            ITerator cafeIterator = cafeMenu.CreateIterator();
-            Console.WriteLine("MENU\n----\nBREAKFAST");
-            PrintMenu(pancakeIterator);
-            Console.WriteLine("\nLUNCH");
-            PrintMenu(dinerIterator);
-            Console.WriteLine("\nCAFE");
-            PrintMenu(cafeIterator);
+            foreach (var menu in menus)
+            {
+                Console.WriteLine($"MENU\n----\n{menu.ToString()}");
+                PrintMenu(menu.CreateIterator());
+            }
         }
         private void PrintMenu(ITerator iterator)
         {
