@@ -16,17 +16,31 @@ namespace Iterator_CompositePatterns
             MenuItem[] lunchItems = dinerMenu.GetMenuItems();
             Console.WriteLine("------------------Pancake House MENU ------------");
 
-            for (int i = 0; i < breakfastItems.Count; i++)
+            //for (int i = 0; i < breakfastItems.Count; i++)
+            //{
+            //    MenuItem menuItem = breakfastItems[i];
+            //    Console.WriteLine(menuItem.GetName() + " ");
+            //    Console.WriteLine(menuItem.GetPrice() + " ");
+            //    Console.WriteLine(menuItem.GetDescription());
+            //}
+            //Console.WriteLine("------------------DINER MENU ------------");
+            //for (int i = 0; i < lunchItems.Length; i++)
+            //{
+            //    MenuItem menuItem = lunchItems[i];
+            //    if (menuItem == null) continue;
+            //    Console.WriteLine(menuItem.GetName() + " ");
+            //    Console.WriteLine(menuItem.GetPrice() + " ");
+            //    Console.WriteLine(menuItem.GetDescription());
+            //}
+
+            foreach (var menuItem in breakfastItems)
             {
-                MenuItem menuItem = breakfastItems[i];
                 Console.WriteLine(menuItem.GetName() + " ");
                 Console.WriteLine(menuItem.GetPrice() + " ");
                 Console.WriteLine(menuItem.GetDescription());
             }
-            Console.WriteLine("------------------DINER MENU ------------");
-            for (int i = 0; i < lunchItems.Length; i++)
+            foreach (var menuItem in lunchItems)
             {
-                MenuItem menuItem = lunchItems[i];
                 if (menuItem == null) continue;
                 Console.WriteLine(menuItem.GetName() + " ");
                 Console.WriteLine(menuItem.GetPrice() + " ");
