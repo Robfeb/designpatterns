@@ -1,30 +1,43 @@
 ﻿using System;
 namespace TemplateMethodPattern.Models
 {
-    public class Tea
+    public class Tea : WaterPreparedBeverage
     {
-        public void PrepareRecipe()
+        public Tea()
         {
-            BoilWater();
-            SteepTeaBag();
-            PourInCup();
-            AddLemon();
+            Beverage = "Tea";
         }
-        public void BoilWater()
-        {
-            Console.WriteLine("Boiling water");
-        }
-        public void SteepTeaBag()
-        {
-            Console.WriteLine("Steeping the tea");
-        }
-        public void PourInCup()
-        {
-            Console.WriteLine("Pouring into cup");
-        }
-        public void AddLemon()
+        //public void PrepareRecipe()
+        //{
+        //    BoilWater();
+        //    SteepTeaBag();
+        //    PourInCup();
+        //    AddLemon();
+        //}
+        //public void BoilWater()
+        //{
+        //    Console.WriteLine("Boiling water");
+        //}
+        //public void SteepTeaBag()
+        //{
+        //    Console.WriteLine("Steeping the tea");
+        //}
+        //public void PourInCup()
+        //{
+        //    Console.WriteLine("Pouring into cup");
+        //}
+        //public void AddLemon()
+        //{
+        //    Console.WriteLine("Adding lemon");
+        //}
+        public override void AddCondiments()
         {
             Console.WriteLine("Adding lemon");
+        }
+
+        public override void Brew()
+        {
+            Console.WriteLine("Steeping the tea");
         }
     }
 }

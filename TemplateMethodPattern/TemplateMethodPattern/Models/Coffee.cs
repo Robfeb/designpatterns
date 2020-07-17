@@ -1,30 +1,57 @@
 ﻿using System;
 namespace TemplateMethodPattern.Models
 {
-    public class Coffee
+    public class Coffee : WaterPreparedBeverage
     {
-        public void PrepareRecipe()
+        public Coffee()
         {
-            BoilWater();
-            BrewCoffeeGrinds();
-            PourInCup();
-            AddSugarAndMilk();
+            Beverage="Coffee";
         }
-        public void BoilWater()
+        //public void PrepareRecipe()
+        //{
+        //    BoilWater();
+        //    BrewCoffeeGrinds();
+        //    PourInCup();
+        //    AddSugarAndMilk();
+        //}
+        //public void BoilWater()
+        //{
+        //    Console.WriteLine("Boiling water");
+        //}
+        //public void BrewCoffeeGrinds()
+        //{
+        //    Console.WriteLine("Dripping Coffee through filter");
+        //}
+        //public void PourInCup()
+        //{
+        //    Console.WriteLine("Pouring into cup");
+        //}
+        //public void AddSugarAndMilk()
+        //{
+        //    Console.WriteLine("Adding Sugar and Milk");
+        //}
+        public override void AddCondiments()
         {
-            Console.WriteLine("Boiling water");
+            Console.WriteLine("Adding Sugar and Milk");
         }
-        public void BrewCoffeeGrinds()
+
+        public override void Brew()
         {
             Console.WriteLine("Dripping Coffee through filter");
         }
-        public void PourInCup()
+
+        public override bool CustomerWantsCondiments()
         {
-            Console.WriteLine("Pouring into cup");
-        }
-        public void AddSugarAndMilk()
-        {
-            Console.WriteLine("Adding Sugar and Milk");
+            Console.WriteLine("Do you want to add Sugar and Milk? (Y/N)");
+            string answer = Console.ReadLine();
+            if (answer.ToLowerInvariant().StartsWith("y"))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }
