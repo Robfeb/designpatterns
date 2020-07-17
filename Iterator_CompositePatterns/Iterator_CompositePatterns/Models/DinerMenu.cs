@@ -1,7 +1,7 @@
 ﻿using System;
 namespace Iterator_CompositePatterns.Models
 {
-    public class DinerMenu
+    public class DinerMenu: IMenu
     {
         static int MAX_ITEMS = 6;
         int numberOfItems = 0;

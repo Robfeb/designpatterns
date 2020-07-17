@@ -1,9 +1,8 @@
 ﻿using System;
 namespace Iterator_CompositePatterns.Models
 {
-    public interface ITerator
+    public interface IMenu
     {
-        bool HasNext();
-        Object Next();
+        public ITerator CreateIterator();
     }
 }
