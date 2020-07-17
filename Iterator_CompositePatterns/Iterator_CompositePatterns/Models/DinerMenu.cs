@@ -37,6 +37,10 @@ namespace Iterator_CompositePatterns.Models
             return menuItems;
 
         }
+        public ITerator CreateIterator()
+        {
+            return new DinerMenuIterator(menuItems);
+        }
 
     }
 }

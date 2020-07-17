@@ -9,12 +9,12 @@ namespace Iterator_CompositePatterns
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to the Iterator and Composite Pattern project!");
-            PancakeHouseMenu pancakeHouseMenu = new PancakeHouseMenu();
-            List<MenuItem> breakfastItems = pancakeHouseMenu.GetMenuItems();
+            //PancakeHouseMenu pancakeHouseMenu = new PancakeHouseMenu();
+            //List<MenuItem> breakfastItems = pancakeHouseMenu.GetMenuItems();
 
-            DinerMenu dinerMenu = new DinerMenu();
-            MenuItem[] lunchItems = dinerMenu.GetMenuItems();
-            Console.WriteLine("------------------Pancake House MENU ------------");
+            //DinerMenu dinerMenu = new DinerMenu();
+            //MenuItem[] lunchItems = dinerMenu.GetMenuItems();
+            //Console.WriteLine("------------------Pancake House MENU ------------");
 
             //for (int i = 0; i < breakfastItems.Count; i++)
             //{
@@ -33,20 +33,42 @@ namespace Iterator_CompositePatterns
             //    Console.WriteLine(menuItem.GetDescription());
             //}
 
-            foreach (var menuItem in breakfastItems)
-            {
-                Console.WriteLine(menuItem.GetName() + " ");
-                Console.WriteLine(menuItem.GetPrice() + " ");
-                Console.WriteLine(menuItem.GetDescription());
-            }
-            foreach (var menuItem in lunchItems)
-            {
-                if (menuItem == null) continue;
-                Console.WriteLine(menuItem.GetName() + " ");
-                Console.WriteLine(menuItem.GetPrice() + " ");
-                Console.WriteLine(menuItem.GetDescription());
-            }
+            //foreach (var menuItem in breakfastItems)
+            //{
+            //    Console.WriteLine(menuItem.GetName() + " ");
+            //    Console.WriteLine(menuItem.GetPrice() + " ");
+            //    Console.WriteLine(menuItem.GetDescription());
+            //}
+            //foreach (var menuItem in lunchItems)
+            //{
+            //    if (menuItem == null) continue;
+            //    Console.WriteLine(menuItem.GetName() + " ");
+            //    Console.WriteLine(menuItem.GetPrice() + " ");
+            //    Console.WriteLine(menuItem.GetDescription());
+            //}
+            //IEnumerator<MenuItem> iterator = breakfastItems.GetEnumerator();
+            //while (iterator.MoveNext())
+            //{
+            //    MenuItem menuItem = iterator.Current;
+            //    Console.WriteLine(menuItem.GetName() + " ");
+            //    Console.WriteLine(menuItem.GetPrice() + " ");
+            //    Console.WriteLine(menuItem.GetDescription());
+            //}
 
+            //IEnumerator<MenuItem> iterator2 = (IEnumerator<MenuItem>)lunchItems.GetEnumerator();
+            //while (iterator2.MoveNext())
+            //{
+            //    MenuItem menuItem = iterator.Current;
+            //    if (menuItem == null) continue;
+            //    Console.WriteLine(menuItem.GetName() + " ");
+            //    Console.WriteLine(menuItem.GetPrice() + " ");
+            //    Console.WriteLine(menuItem.GetDescription());
+            //}
+
+            PancakeHouseMenu pancakeHouseMenu = new PancakeHouseMenu();
+            DinerMenu dinerMenu = new DinerMenu();
+            Waitress waitress = new Waitress(pancakeHouseMenu, dinerMenu);
+            waitress.PrintMenu();
         }
     }
 }
