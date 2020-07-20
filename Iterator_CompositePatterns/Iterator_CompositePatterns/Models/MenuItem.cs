@@ -1,7 +1,7 @@
 ﻿using System;
 namespace Iterator_CompositePatterns.Models
 {
-    public class MenuItem
+    public class MenuItem : MenuComponent
     {
         string name;
         string description;
@@ -14,21 +14,28 @@ namespace Iterator_CompositePatterns.Models
             this.description = description;
             this.vegetarian = vegetarian; this.price = price;
         }
-        public string GetName()
+        public override string GetName()
         {
             return name;
         }
-        public string GetDescription()
+        public override string GetDescription()
         {
             return description;
         }
-        public double GetPrice()
+        public override double GetPrice()
         {
             return price;
         }
-        public bool IsVegetarian()
+        public override bool IsVegetarian()
         {
             return vegetarian;
+        }
+
+        public override void Print()
+        {
+            Console.WriteLine("\n" + GetName());
+            Console.WriteLine(", " + GetDescription());
+            Console.WriteLine("---------------------");
         }
     }
 }
