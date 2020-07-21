@@ -30,6 +30,14 @@ namespace Iterator_CompositePatterns.Models
         {
             return name;
         }
+        public override bool IsVegetarian()
+        {
+            foreach (var menuComponent in menuComponents)
+            {
+                return menuComponent.IsVegetarian();
+            }
+            return false;
+        }
         public override string GetDescription()
         {
             return description;

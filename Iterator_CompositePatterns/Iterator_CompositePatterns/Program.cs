@@ -116,7 +116,8 @@ namespace Iterator_CompositePatterns
             "Apple pie with a flakey crust, topped with vanilla icecream", true,
             1.59));
             Waitress waitress = new Waitress(allMenus);
-            waitress.PrintMenu();
+            //waitress.PrintMenu();
+            waitress.PrintVegetarianMenu();
         }
     }
 }
