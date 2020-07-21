@@ -6,6 +6,7 @@ namespace StatePattern
         SOLD_OUT,
         NO_COIN,
         HAS_COIN,
-        SOLD
+        SOLD,
+        WINNER
     }
 }
