@@ -86,7 +86,7 @@ This repository contains 11 design pattern implementations, each in its own proj
 - **Composite:** Composes objects into tree structures to represent part-whole hierarchies.
 
 **Key Components:**
-- `ITerator` interface
+- `ITerator` interface (note: intentionally named without the 'I' in 'Iterator')
 - Iterator implementations: `DinerMenuIterator`, `PancakeHouseIterator`
 - `MenuComponent` composite base class
 - `Menu` and `MenuItem` for hierarchical menu structures
